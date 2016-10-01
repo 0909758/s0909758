@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authorize, except: [:show, :index]
 
   # GET /posts
   # GET /posts.json
@@ -58,6 +59,16 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def authorize
+    if current_user.nil?
+      redirect_to login_url, alert: "Not authorized! Please log in."
+    else
+      if @post && @post.user != current_user
+        redirect_to root_path, alert: "Not authorized! Only #{@post.user} has access to this post."
+      end
     end
   end
 

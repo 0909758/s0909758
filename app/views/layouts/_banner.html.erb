@@ -1,2 +1,5 @@
 <div class="jumbotron" id="mainBanner">
+  <% if current_user %>
+  <h1>Welcome <%= current_user.first_name + ' ' + current_user.last_name %></h1>
+  <% end %>
 </div>

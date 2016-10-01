@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :content
       t.string :image
       t.integer :user_id
-
+      t.integer :profile_id
       t.timestamps null: false
     end
   end

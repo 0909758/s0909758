@@ -5,4 +5,6 @@ class Post < ActiveRecord::Base
             presence: true
   validates :user,
             presence: true
+
+
 end

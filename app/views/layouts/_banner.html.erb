@@ -1,5 +1,7 @@
-<div class="jumbotron" id="mainBanner">
+<div class="jumbotron">
   <% if current_user %>
-  <h1>Welcome <%= current_user.first_name + ' ' + current_user.last_name %></h1>
+      <h1>Logged in as <%= current_user.first_name + ' ' + current_user.last_name %></h1>
+  <% else %>
+      <h1>Please log in or register.</h1>
   <% end %>
 </div>

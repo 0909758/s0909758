@@ -30,9 +30,9 @@
                 <p><%= post.content %></p>
               </div>
               <div class="panel-footer">
-                <p><%= post.user %></p>
+                <p><%= link_to post.user, profile_path(id: post.user_id) %></p>
                 <p><%= post.created_at %></p>
-                <p><%= post.profile_id %></p>
+
                 <% if current_user && post.user == current_user %>
                     <p>
                       <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure you want to delete that message?' } %>

@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = current_user.posts.new(post_params)
-
+    @post.profile_id = $profile
     respond_to do |format|
       if @post.save
         format.html { redirect_to :back, notice: 'Post was successfully created.' }

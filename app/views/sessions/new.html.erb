@@ -1,14 +1,23 @@
-<h1>Log In</h1>
-<%= form_tag sessions_path do %>
-    <div class="field">
-      <%= label_tag :email %><br>
-      <%= text_field_tag :email %>
+<div class="col-xs-6 col-xs-offset-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h1 class="panel-title">Log In</h1>
     </div>
-    <div class="field">
-      <%= label_tag :password %><br>
-      <%= password_field_tag :password %>
+    <div class="panel-body">
+      <%= form_tag sessions_path do %>
+          <div class="field form group">
+            <%= label_tag :email %><br>
+            <%= text_field_tag :email %>
+          </div>
+          <div class="field form group">
+            <%= label_tag :password %><br>
+            <%= password_field_tag :password %>
+          </div>
+          <br>
+          <div class="actions">
+            <%= submit_tag 'Log In', class:'btn btn-primary' %>
+          </div>
+      <% end %>
     </div>
-    <div class="actions">
-      <%= submit_tag "Log In" %>
-    </div>
-<% end %>
+  </div>
+</div>

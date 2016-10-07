@@ -15,4 +15,10 @@ class User < ActiveRecord::Base
   def to_s
     "#{first_name} #{last_name}"
   end
+
+  def self.search(search)
+    where('first_name LIKE ? OR last_name LIKE ?', "%#{search}%", "%#{search}%")
+
+  end
+
 end

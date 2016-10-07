@@ -13,8 +13,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.navbar{
-  background-color: whitesmoke;
+body{
+  padding-top: 80px;
+  background: url('background1.jpg') no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.fixed-panel{
+  position: fixed;
+  width: 14%
 }
 
 .jumbotron{

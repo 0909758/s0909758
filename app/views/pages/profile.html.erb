@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-3">
-    <div class="panel panel-default">
+    <div class="panel panel-default fixed-panel">
       <div class="panel-heading">
         <h3 class="panel-title"><%= @user_full_name %></h3>
       </div>
@@ -28,12 +28,13 @@
             <div class="panel panel-default">
               <div class="panel-body">
                 <p><%= post.content %></p>
+                <p><%= post.image %></p>
               </div>
               <div class="panel-footer">
                 <p><%= link_to post.user, profile_path(id: post.user_id) %></p>
                 <p><%= post.created_at %></p>
 
-                <% if current_user && post.user == current_user %>
+                <% if current_user.id == post.user_id or current_user.id == post.profile_id %>
                     <p>
                       <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure you want to delete that message?' } %>
                     </p>
@@ -46,9 +47,11 @@
   </div>
 
   <div class="col-xs-3">
-    <div class="panel panel-default">
+    <div class="panel panel-default fixed-panel">
+      <div class="panel-heading">
+        <h3 class="panel-title">Friends</h3>
+      </div>
       <div class="panel-body">
-        Friends
       </div>
     </div>
   </div>

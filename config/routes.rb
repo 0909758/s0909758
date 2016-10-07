@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'home' => 'pages#home'
   get 'profile/:id' => 'pages#profile', as: 'profile'
   get 'explore' => 'pages#explore'
+  get 'users', to: 'users#index', as: 'users'
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
@@ -13,7 +14,6 @@ Rails.application.routes.draw do
   resources :posts
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -35,3 +35,17 @@ body{
 .navbar{
   font-family: "Courier New";
 }
+
+.panel{
+  font-family: "Courier New";
+}
+
+.panel-transparent{
+  background: none;
+}
+
+.panel-transparent > .panel-body{
+  background-color: rgba(0,0,0,0.5);
+}
+
+

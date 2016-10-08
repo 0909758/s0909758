@@ -34,10 +34,10 @@
                 <p><%= link_to post.user, profile_path(id: post.user_id) %></p>
                 <p><%= post.created_at %></p>
 
-                <% if current_user.id == post.user_id or current_user.id == post.profile_id %>
-                    <p>
-                      <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure you want to delete that message?' } %>
-                    </p>
+                <% if current_user %>
+                  <% if current_user.id == post.user_id or current_user.id == post.profile_id %>
+                    <p><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure you want to delete that message?' } %></p>
+                  <% end %>
                 <% end %>
               </div>
             </div>

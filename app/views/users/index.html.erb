@@ -1,5 +1,5 @@
 <div class="col-xs-6 col-xs-offset-3">
-  <div class="panel panel-default">
+  <div class="panel panel-default panel-transparent">
     <div class="panel-heading">
       <h3 class="panel-title">Users</h3>
     </div>
@@ -7,8 +7,8 @@
       <table class="table">
         <thead>
         <tr>
-          <th>Name</th>
-          <th>Age</th>
+          <th class="greenText">Name</th>
+          <th class="greenText">Age</th>
           <th colspan="3"></th>
         </tr>
         </thead>
@@ -16,9 +16,9 @@
         <tbody>
         <% @users.each do |user| %>
             <tr>
-              <td><%= link_to user.first_name + ' ' + user.last_name, profile_path(id: user.id) %></td>
-              <td><%= user.age %></td>
-              <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to user.first_name + ' ' + user.last_name, profile_path(id: user.id), style: 'color: lime' %></td>
+              <td class="greenText"><%= user.age %></td>
+              <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, style: 'color: lime' %></td>
             </tr>
         <% end %>
         </tbody>

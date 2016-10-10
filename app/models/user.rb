@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :posts, dependent: :destroy, foreign_key: 'user_id'
 
+  mount_uploader :profile_image, ImageUploader
+
   validates :first_name,
             presence: true
   validates :last_name,

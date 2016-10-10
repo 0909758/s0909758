@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20160924110046) do
     t.string   "last_name"
     t.integer  "age"
     t.text     "bio"
+    t.string   "profile_image"
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at",      null: false

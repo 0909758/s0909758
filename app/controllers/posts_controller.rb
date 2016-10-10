@@ -64,7 +64,7 @@ class PostsController < ApplicationController
 
   def authorize
     if current_user.nil?
-      redirect_to login_url, alert: "Not authorized! Please log in."
+      redirect_to login_url, alert: 'Not authorized! Please log in.'
     else
       if @post && @post.user != current_user
         redirect_to root_path, alert: "Not authorized! Only #{@post.user} has access to this post."

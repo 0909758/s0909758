@@ -45,7 +45,22 @@ body{
 }
 
 .panel-transparent > .panel-body{
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.9);
+}
+
+.greenText{
+  color: lime;
+}
+
+.avatar{
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+.line{
+  height:1px;
+  background: lime;
 }
 
 

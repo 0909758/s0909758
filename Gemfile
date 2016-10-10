@@ -3,6 +3,13 @@ source 'https://rubygems.org'
 # Boostrap for UI components
 gem 'bootstrap-sass', '~> 3.3.6'
 
+# carrierwave for file uploads
+gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
+
+# image resizing
+gem 'mini_magick'
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 # Use sqlite3 as the database for Active Record

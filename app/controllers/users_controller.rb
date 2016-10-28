@@ -4,11 +4,10 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
     if params[:search]
-      @users = User.search(params[:search])
+      @users = User.includes(:posts).search(params[:search])
     else
-      @users = User.all
+      @users = User.includes(:posts).all
     end
 
   end

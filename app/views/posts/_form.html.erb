@@ -18,7 +18,11 @@
   </div>
   <div class="field form-group">
     <h5>Add image</h5>
-    <%= f.file_field :image, class:'form-control-file' %>
+    <% if current_user.posts.length > 9 %>
+      <%= f.file_field :image, class:'form-control-file' %>
+    <% else %>
+        <h5>Create <%= 10 - current_user.posts.length %> more posts to be able to add images.</h5>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit class:'btn btn-primary' %>
